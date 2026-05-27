@@ -1,0 +1,5 @@
+require("config.options")
+require("config.appearance")
+require("config.binds")
+require("config.windows")
+require("config.autostart")
