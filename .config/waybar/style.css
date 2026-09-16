@@ -1,0 +1,217 @@
+@import "../omarchy/current/theme/waybar.css";
+@import "./colors.css";
+
+* {
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  font-size: 12px;
+  font-family: "JetBrainsMono Nerd Font Propo";
+  font-weight: bold;
+  font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
+  padding: 0;
+  margin: 0;
+}
+
+window#waybar,
+window#waybar.empty,
+window#waybar.empty #window {
+  color: @foreground;
+  background-color: transparent;
+  background: alpha(@surface_bright, 0.1);
+  border-radius: 10px;
+  padding: 0;
+  border: 0;
+}
+
+tooltip {
+  color: @inverse_surface;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 20px;
+  padding: 6px 2px;
+  border: 1px solid alpha(@surface_bright, 0.2);
+}
+
+tooltip label {
+  color: @inverse_surface;
+}
+
+.modules-left {
+  margin-top: 8px;
+  color: @secondary;
+  /* padding: 2px; */
+}
+
+.modules-right {
+  margin-bottom: 8px;
+  color: @secondary;
+  /* padding: 2px; */
+}
+
+.modules-center {
+  color: @secondary;
+  /* padding: 2px; */
+}
+
+.modules-right,
+.modules-center,
+.modules-left {
+  background-color: transparent;
+}
+
+#custom-separator {
+  padding: 10px 0;
+}
+
+#workspaces {
+  padding-bottom: 10px;
+}
+
+#workspaces button {
+  color: @foreground;
+  padding: 1px 0px;
+  margin: 4px 0px;
+  min-height: 3px;
+  box-shadow: none;
+  box-shadow: inset 0px 0px 1px alpha(@foreground, 0.7);
+  border-radius: 200px;
+  text-shadow: none;
+  /* transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.682); */
+  transition: all 0.2s ease;
+}
+
+#workspaces button.empty {
+  color: @outline;
+  opacity: 0.7;
+}
+
+#workspaces button.active {
+  color: @foreground;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  box-shadow: inset 0px 0px 3px alpha(@foreground, 0.7);
+  border-radius:200px;
+  transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#workspaces button:hover {
+  color: @foreground;
+  /* padding-top: 2px; */
+  /* padding-bottom: 2px; */
+  transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#workspaces button.urgent {
+  color: #e24;
+}
+
+#battery,
+#bluetooth,
+#clock,
+#cpu,
+#custom-expand-icon,
+/* #custom-omarchy, */
+#custom-screenrecording-indicator,
+#custom-spotify,
+#custom-update,
+#custom-voxtype,
+#mpris,
+#network,
+#pulseaudio,
+#tray {
+  padding: 3px 0px;
+  margin: 4px 0;
+}
+
+#custom-hypridle.notactive {
+  color: #39FF14;
+}
+
+#pulseaudio.muted {
+  color: #cc3436;
+}
+
+#battery.critical:not(.charging) {
+  color: #f53c3c;
+}
+
+#cpu,
+#battery,
+#pulseaudio,
+#custom-omarchy,
+#custom-screenrecording-indicator,
+#custom-update {
+  min-height: 12px;
+  margin: 7.5px 0;
+}
+
+#custom-omarchy {
+  margin-bottom: 18px;
+}
+
+#tray {
+  margin-bottom: 16px;
+}
+
+#bluetooth {
+  margin-bottom: 17px;
+}
+
+#network {
+  margin-bottom: 13px;
+}
+
+#custom-expand-icon {
+  margin-bottom: 18px;
+}
+
+#custom-update {
+  font-size: 10px;
+}
+
+#clock {
+  margin-top: 5px;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+#custom-screenrecording-indicator {
+  min-height: 12px;
+  margin-top: 5px;
+  font-size: 10px;
+  padding-bottom: 1px;
+}
+
+#custom-screenrecording-indicator.active {
+  color: #a55555;
+}
+
+#custom-voxtype {
+  min-height: 12px;
+  margin: 7.5px 0 0 0;
+}
+
+#custom-voxtype.recording {
+  color: #a55555;
+}
+
+#custom-spotify {
+  margin: 3px 0;
+  padding: 4px 0px;
+  font-size: 11px;
+  min-height: 28px;
+}
+
+#custom-spotify.playing {
+  color: #1db954;
+}
+
+#custom-spotify.paused {
+  color: alpha(@foreground, 0.6);
+}
+
+#custom-spotify.stopped {
+  color: alpha(@foreground, 0.3);
+}

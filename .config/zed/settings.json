@@ -1,0 +1,66 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "project_panel": {
+    "dock": "left"
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "git_panel": {
+    "dock": "left"
+  },
+  "context_servers": {
+    "mcp-enterprise": {
+        "enabled": true,
+        "command": "node",
+        "args": [
+        "/home/juanma/projects/current-projects/mcp-enterprise/dist/mcp-server.js"
+      ],
+        "env": {
+        "TRANSPORT": "stdio",
+        "NODE_ENV": "development"
+      }
+    }
+  },
+  "agent": {
+    "dock": "right",
+    "profiles": {
+      
+    },
+    "always_allow_tool_actions": true,
+    "default_profile": "write",
+    "default_model": {
+      "provider": "google",
+      "model": "gemini-2.5-flash"
+    },
+    "model_parameters": []
+  },
+  "tab_size": 4,
+  "helix_mode": false,
+  "base_keymap": "VSCode",
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 1000
+    }
+  },
+  "buffer_font_fallbacks": [".ZedMono"],
+  "buffer_font_family": "Monaspace Radon",
+  "icon_theme": "Catppuccin Macchiato",
+  "ui_font_size": 16,
+  "buffer_font_size": 14.0,
+  "theme": {
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "Ayu Dark"
+  }
+}

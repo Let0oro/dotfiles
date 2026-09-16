@@ -1,0 +1,13 @@
+[Unit]
+Description=Mi script de inotify para organizar archivos en Descargas
+
+[Service]
+ExecStart=%h/.local/bin/downloads_organizer.sh
+# %h/ -> /home/user/
+
+Restart=always
+RestartSec=5
+
+[Install]
+# Cuando se inicia la sesión gráfica
+WantedBy=default.target

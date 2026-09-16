@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if [[ $# -lt 1 ]]; then
+  echo "uso: zj-hx-open <ruta>"
+  exit 1
+fi
+
+target_file="$(realpath "$1")"
+
+if [[ ! -e "$target_file" ]]; then
+  echo "no existe: $target_file"
+  exit 1
+fi
+
+focus_helix_pane() {
+  if command -v jq >/dev/null 2>&1 && zellij action list-panes --json >/dev/null 2>&1; then
+    pane_id="$(
+      zellij action list-panes --json \
+        | jq -r '.[] | select(.pane_command? and (.pane_command | test("helix"))) | .id' \
+        | head -n1
+    )"
+    if [[ -n "${pane_id:-}" && "${pane_id}" != "null" ]]; then
+      zellij action focus-pane-id "$pane_id" >/dev/null 2>&1 || true
+    fi
+  fi
+}
+
+focus_helix_pane
+zellij action write-chars $'\x1b'
+sleep 0.03
+zellij action write-chars ":open $target_file"
+sleep 0.03
+zellij action write-chars $'\n'

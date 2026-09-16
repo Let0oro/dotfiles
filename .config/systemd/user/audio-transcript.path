@@ -1,0 +1,10 @@
+
+[Unit]
+Description=Vigila inputs/ para nuevos AAC
+
+[Path]
+PathExistsGlob=/home/juanma/projects/my-project/audio-transcript/inputs/*.aac
+Unit=audio-transcript.service
+
+[Install]
+WantedBy=default.target

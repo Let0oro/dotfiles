@@ -1,0 +1,8 @@
+theme = "everforest"
+startup_page = "dashboard"
+pdf_viewer = "xdg-open"
+library_folders = ["/home/juanma/.local/share/papr/papers"]
+download_path = "/home/juanma/.local/share/papr/papers"
+projects_directory = "/home/juanma/.local/share/papr/projects"
+dashboard_keywords = ""
+enabled_plugins = []

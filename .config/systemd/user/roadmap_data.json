@@ -1,0 +1,225 @@
+[
+    {
+        "fase": "FASE 1: Fundamentos (Core)",
+        "pasos": [
+            {
+                "titulo": "Dominar Python",
+                "desc": "Sintaxis, estructuras de datos, funciones y POO.",
+                "completado": false,
+                "tag": "#core"
+            },
+            {
+                "titulo": "Manejar la Terminal",
+                "desc": "Comandos de Bash/Shell (ls, cd, grep, nano/vim).",
+                "completado": false,
+                "tag": "#core"
+            },
+            {
+                "titulo": "Aprender Git",
+                "desc": "Control de versiones (commit, push, pull, branch).",
+                "completado": false,
+                "tag": "#core"
+            },
+            {
+                "titulo": "Maestría en SQL",
+                "desc": "Consultas (SELECT, JOIN), DML (INSERT, UPDATE) y DDL (CREATE).",
+                "completado": false,
+                "tag": "#core"
+            }
+        ]
+    },
+    {
+        "fase": "FASE 2: Cloud Engineer",
+        "pasos": [
+            {
+                "titulo": "Conceptos Cloud (IaaS, PaaS, SaaS)",
+                "desc": "Entender los modelos de servicio en la nube (ej. AWS, GCP, Azure).",
+                "completado": false,
+                "tag": "#cloud"
+            },
+            {
+                "titulo": "Redes en la Nube",
+                "desc": "Conceptos de VPC, Subnets, Security Groups y ACLs.",
+                "completado": false,
+                "tag": "#cloud"
+            },
+            {
+                "titulo": "Gestión de Permisos (IAM)",
+                "desc": "Roles, usuarios, grupos y políticas de seguridad.",
+                "completado": false,
+                "tag": "#cloud"
+            },
+            {
+                "titulo": "Contenedores (Docker)",
+                "desc": "Aprender a 'empaquetar' aplicaciones con Docker.",
+                "completado": false,
+                "tag": "#core"
+            },
+            {
+                "titulo": "Escribir Dockerfiles",
+                "desc": "Crear imágenes optimizadas y multi-etapa.",
+                "completado": false,
+                "tag": "#cloud"
+            },
+            {
+                "titulo": "Infraestructura como Código (IaC)",
+                "desc": "Usar Terraform para definir y desplegar infraestructura.",
+                "completado": false,
+                "tag": "#cloud"
+            },
+            {
+                "titulo": "Manejo de Estado de Terraform",
+                "desc": "Providers, state (local y remoto), módulos.",
+                "completado": false,
+                "tag": "#cloud"
+            },
+            {
+                "titulo": "Orquestación (Kubernetes)",
+                "desc": "Gestionar, escalar y desplegar contenedores a gran escala.",
+                "completado": false,
+                "tag": "#cloud"
+            },
+            {
+                "titulo": "Conceptos de Kubernetes",
+                "desc": "Entender Pods, Services, Deployments e Ingress.",
+                "completado": false,
+                "tag": "#cloud"
+            }
+        ]
+    },
+    {
+        "fase": "FASE 3: Full Stack Developer",
+        "pasos": [
+            {
+                "titulo": "HTML5 Semántico",
+                "desc": "Estructura de una página web moderna.",
+                "completado": false,
+                "tag": "#fullstack"
+            },
+            {
+                "titulo": "CSS3 y Flexbox/Grid",
+                "desc": "Diseño responsivo y estilizado de componentes.",
+                "completado": false,
+                "tag": "#fullstack"
+            },
+            {
+                "titulo": "JavaScript (ES6+)",
+                "desc": "Asincronía (Promises, async/await), DOM y eventos.",
+                "completado": false,
+                "tag": "#fullstack"
+            },
+            {
+                "titulo": "Framework Frontend (React)",
+                "desc": "Aprender un framework moderno (o Vue/Svelte/Angular).",
+                "completado": false,
+                "tag": "#fullstack"
+            },
+            {
+                "titulo": "Componentes y Hooks de React",
+                "desc": "useState, useEffect, useContext y creación de componentes.",
+                "completado": false,
+                "tag": "#fullstack"
+            },
+            {
+                "titulo": "Framework Backend (Node.js/Django)",
+                "desc": "Crear un servidor (ej. Express, FastAPI, Django).",
+                "completado": false,
+                "tag": "#fullstack"
+            },
+            {
+                "titulo": "APIs RESTful",
+                "desc": "Diseñar y consumir APIs (GET, POST, PUT, DELETE).",
+                "completado": false,
+                "tag": "#fullstack"
+            },
+            {
+                "titulo": "Autenticación y Autorización",
+                "desc": "Manejo de sesiones, JWT (JSON Web Tokens), OAuth.",
+                "completado": false,
+                "tag": "#fullstack"
+            },
+            {
+                "titulo": "ORM / Cliente de BBDD",
+                "desc": "Conectar el backend a la BBDD (ej. Prisma, SQLAlchemy).",
+                "completado": false,
+                "tag": "#fullstack"
+            }
+        ]
+    },
+    {
+        "fase": "FASE 4: IA Generativa",
+        "pasos": [
+            {
+                "titulo": "Fundamentos de ML",
+                "desc": "Entender qué es el entrenamiento, la inferencia y los tipos de modelos.",
+                "completado": false,
+                "tag": "#genai"
+            },
+            {
+                "titulo": "Librerías de Datos (Pandas, Numpy)",
+                "desc": "Manipulación y procesamiento de dataframes y arrays.",
+                "completado": false,
+                "tag": "#genai"
+            },
+            {
+                "titulo": "Conceptos de LLMs",
+                "desc": "Qué son Transformers, Embeddings y Attention.",
+                "completado": false,
+                "tag": "#genai"
+            },
+            {
+                "titulo": "Prompt Engineering",
+                "desc": "Diseñar prompts efectivos (Zero-shot, Few-shot, Chain-of-Thought).",
+                "completado": false,
+                "tag": "#genai"
+            },
+            {
+                "titulo": "Frameworks de LLMs (LangChain)",
+                "desc": "Orquestar llamadas a LLMs (o LlamaIndex).",
+                "completado": false,
+                "tag": "#genai"
+            },
+            {
+                "titulo": "Arquitectura RAG",
+                "desc": "Retrieval-Augmented Generation para 'hablar con tus datos'.",
+                "completado": false,
+                "tag": "#genai"
+            },
+            {
+                "titulo": "Bases de Datos Vectoriales",
+                "desc": "Almacenar y consultar embeddings (ej. Pinecone, ChromaDB).",
+                "completado": false,
+                "tag": "#genai"
+            },
+            {
+                "titulo": "Despliegue de Modelos (MLOps)",
+                "desc": "Servir modelos como APIs (ej. FastAPI, Seldon Core).",
+                "completado": false,
+                "tag": "#genai"
+            }
+        ]
+    },
+    {
+        "fase": "FASE 5: Puesta en Producción (DevOps)",
+        "pasos": [
+            {
+                "titulo": "CI/CD (Integración/Despliegue Continuo)",
+                "desc": "Automatizar pruebas y despliegues (ej. GitHub Actions).",
+                "completado": false,
+                "tag": "#core"
+            },
+            {
+                "titulo": "Monitorización",
+                "desc": "Recopilar métricas de la aplicación (ej. Prometheus, Grafana).",
+                "completado": false,
+                "tag": "#cloud"
+            },
+            {
+                "titulo": "Logging (Observabilidad)",
+                "desc": "Centralizar y analizar logs (ej. ELK Stack, Datadog).",
+                "completado": false,
+                "tag": "#cloud"
+            }
+        ]
+    }
+]

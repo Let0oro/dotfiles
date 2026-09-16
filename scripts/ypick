@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+tmp=$(mktemp /tmp/yazi-pick-XXXXXX)
+
+# 1) Abrimos yazi en este mismo TTY
+yazi --chooser-file="$tmp"
+
+# 2) Si el usuario eligió algo, abrimos Helix
+if [ -s "$tmp" ]; then
+  file="$(cat "$tmp")"
+  rm -f "$tmp"
+  exec hx "$file"
+else
+  rm -f "$tmp"
+fi

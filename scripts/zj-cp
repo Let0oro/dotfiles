@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+src="$(zellij pipe -p filepicker)"
+[[ -n "${src:-}" ]] || exit 0
+
+dst="$(zellij pipe -p filepicker)"
+[[ -n "${dst:-}" ]] || exit 0
+
+if [[ -d "$dst" ]]; then
+  cp -r "$src" "$dst/"
+else
+  cp -r "$src" "$dst"
+fi

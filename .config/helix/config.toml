@@ -1,0 +1,96 @@
+theme = "autumn" # custom theme
+
+# Setting up basic editor config:
+# + shell : bash
+# + auto-save : save when editor loses focus
+# + preview-completion-insert : view completed previews for suggestions
+# + bufferline :
+# + mouse :  enable or diable mouse 
+# + line-number : line number type, absolute or relative
+[editor]
+mouse = true
+shell = ["bash", "-c"]
+line-number = "relative"
+auto-save = true
+preview-completion-insert = true
+bufferline = "always"
+
+# Editor statusline (bottom-line) settings:
+# + mode.* : word to display in each mode
+# + center, left, right : properties to show in location 
+[editor.statusline]
+mode.normal = "NOR"
+mode.insert = "INS"
+mode.select = "SEL"
+center = ["version-control"]
+left = ["mode", "spinner", "file-name", "read-only-indicator", "file-modification-indicator"]
+right = ["diagnostics", "selections", "position", "file-encoding", "file-type"]
+
+# Editor indent settings:
+# + character : symbol for indent guides
+# + render : whether to render the indent-guide
+[editor.indent-guides]
+character = "▏" # Some characters that work well: "▏", "┆", "┊", "⸽"
+render = true
+# Whitespace settings and symbols
+# + (*whiteline) types : when to render
+[editor.whitespace.render]
+tab = "all"
+tabpad = "all"
+newline = "none"
+
+[editor.whitespace.characters]
+space = "·"
+nbsp = "⍽"
+nnbsp = "␣"
+tab = "→"
+newline = "⏎"
+tabpad = "·" # Tabs will look like "→···" (depending on tab width)
+
+# Editor lsp settings
+# + display-inlay-hints : enable or disable iinlay hints (should also be enabled in LSP config in lanugauges.toml)
+[editor.lsp]
+display-inlay-hints = true
+
+# Editor cursor shape settings, change cursor shapes in modes
+# + (*modes) : cursor shape option (bar, block and underline)
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+# Editor filepicker settings
+# + hidden : show hidden files
+[editor.file-picker]
+hidden = false
+
+# Modified keybinding in Normal mode
+[keys.normal]
+"C-s" = ":w" # Ctrl-s saves the current file 
+# left = "no_op"
+# right = "no_op"
+down = "no_op" # disable down arrow
+up = "no_op" # disable up arrow
+y = "yank_main_selection_to_clipboard" # y yanks selection to clipboard
+p = "paste_clipboard_before" # p pastes clipboard before 
+"A-ret" = ["open_above", "normal_mode"] 
+
+# Add a new line above and enter normal mode
+"ret" = ["open_below", "normal_mode"] # Enter adds line above
+
+# Modified keybindings in Insert mode
+[keys.insert]
+# left = "no_op"
+# right = "no_op"
+down = "no_op" # disable down arrow
+up = "no_op" # disable up arrow
+"A-h" = "move_char_left" # Alt-h moves cursor up
+"A-l" = "move_char_right" # Alt-l moves cursor right
+"A-k" = "move_line_up" # Alt-k moves cursor up
+"A-j" = "move_line_down" # Alt-j moves cursor down
+j = { k = "normal_mode" } # jk to enter Normal mode
+
+# Modified keybindings in select/extend mode
+[keys.select]
+y = "yank_main_selection_to_clipboard" # y yanks selection to clipboard
+p = "paste_clipboard_before" # p pastes clipboard before

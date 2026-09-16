@@ -1,0 +1,81 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "mcp-enterprise": {
+      "type": "remote",
+      "url": "https://mcp.localhost/json",
+      "timeout": 10000
+    },
+     "exa": {
+      "type": "remote",
+      "url": "https://mcp.exa.ai/mcp",
+      "enabled": true
+    },
+    "nodemap-mcp": {
+      "type": "remote",
+      "url": "http://localhost:3900/mcp",
+      "enabled": true,
+      "headers": {
+        "Accept": "application/json, text/event-stream"
+      }
+    },
+    "stitch": {
+      "type": "remote",
+      "url": "https://stitch.googleapis.com/mcp",
+      "enabled": true,
+      "headers": {
+        "X-Goog-Api-Key": "AQ.Ab8RN6L35B9-c-W55n8nEoIKgJnYT0u57EIMqByZJIYqmb2tuA"
+      }
+    }
+  },
+  "instructions": [
+    "Follow AGENTS.md and the rules/ directory.",
+    "Treat the MCP as a guided workflow engine.",
+    "Use resources before equivalent tools when possible.",
+    "Require safety checkpoints for destructive operations.",
+    "Keep tool usage minimal and phase-driven."
+  ],
+  "permission": {
+        "*": "allow",
+    "read": "allow",
+    "edit": "allow",
+    "write": "allow",
+    "patch": "allow",
+    "glob": "allow",
+    "grep": "allow",
+    "bash": "allow",
+    "task": "allow",
+    "skill": "allow",
+    "lsp": "allow",
+    "webfetch": "allow",
+    "websearch": "allow",
+    "external_directory": "ask",
+    "doom_loop": "allow",
+    "external_directory": {
+      "*": "ask",
+      "~/projects/*": "allow"
+    },
+    "bash": {
+      "omarchy-*": "allow",
+      "*": "allow"
+    }
+  },
+  "provider": {
+    "ollama": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Ollama (nativo)",
+      "options": {
+        "baseURL": "http://localhost:11434/v1"
+      },
+      "models": {
+        "qwen3:8b": {
+          "name": "Qwen3 8B",
+          "tools": true
+        },
+        "mistral:7b": {
+          "name": "Mistral 7B"
+        }
+      }
+    }
+  }
+}

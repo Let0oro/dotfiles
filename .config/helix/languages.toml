@@ -1,0 +1,68 @@
+[language-server.emmet-lsp]
+command = "emmet-language-server"
+args = ["--stdio"]
+
+[[language]]
+name = "html"
+roots = [".git"]
+language-servers = ["emmet-lsp"]
+
+[language-server.vscode-css-language-server.config]
+css = { validate = { enable = true } }
+scss = { validate = { enable = true } }
+less = { validate = { enable = true } }
+provideFormatter = true
+
+[[language]]
+name = "css"
+language-servers = ["vscode-css-language-server"]
+formatter = { command = "prettierd", args = ["--parser", "css"] }
+auto-format = true
+
+[[language]]
+name = "scss"
+language-servers = ["vscode-css-language-server"]
+formatter = { command = "prettierd", args = ["--stdin-filepath", "dummy.scss"] }
+auto-format = true
+
+# ── Astro ──────────────────────────────────────────────
+[language-server.astro-ls]
+command = "astro-ls"
+args = ["--stdio"]
+config = { typescript = { tsdk = "/usr/local/lib/node_modules/typescript/lib" } }
+
+[[language]]
+name = "astro"
+language-servers = ["astro-ls"]
+formatter = { command = "prettier", args = ["--plugin", "prettier-plugin-astro", "--parser", "astro"] }
+auto-format = true
+
+# ── Rust (opcional: activar Clippy) ────────────────────
+
+[[language]]
+name = "rust"
+auto-format = false
+
+[language-server.rust-analyzer.config.check]
+command = "clippy"
+
+
+[[language]]
+name = "typescript"
+formatter = { command = "prettierd", args = ["--parser", "typescript"] }
+auto-format = true
+
+[[language]]
+name = "tsx"
+formatter = { command = "prettierd", args = ["--parser", "typescript"] }
+auto-format = true
+
+[[language]]
+name = "javascript"
+formatter = { command = "prettierd", args = ["--parser", "typescript"] }
+auto-format = true
+
+[[language]]
+name = "jsx"
+formatter = { command = "prettierd", args = ["--parser", "typescript"] }
+auto-format = true

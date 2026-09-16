@@ -1,0 +1,8 @@
+[[mgr.prepend_keymap]]
+on = [ "<C-n>" ]
+# $1 -> u archivo; $@ -> varios
+# -x -> cierra tras arrastrar
+# -i -> permite arrartrar hacia la ventana
+# -T -> trata los argumentos como rutas de archivos
+run = ''' shell --confirm 'dragon-drop -i -T "$@"' '''
+desc = "Drag and drop via dragon"

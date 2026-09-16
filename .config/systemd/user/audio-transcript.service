@@ -1,0 +1,9 @@
+
+[Unit]
+Description=Procesa audios AAC con Vosk
+After=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/home/juanma/projects/my-project/audio-transcript
+ExecStart=/home/juanma/projects/my-project/audio-transcript/script

@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+target="$(zellij pipe -p filepicker)"
+[[ -n "${target:-}" ]] || exit 0
+
+echo "¿Eliminar '$target'? [y/N] "
+read -r confirm
+[[ "$confirm" == "y" || "$confirm" == "Y" ]] || exit 0
+
+rm -rf "$target"

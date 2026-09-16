@@ -1,0 +1,12 @@
+[tools]
+bun = "latest"
+elixir = "latest"
+erlang = "latest"
+flyctl = "latest"
+go = "latest"
+java = "latest"
+node = "latest"
+python = "system"
+
+[settings]
+disable_tools = ["python"]

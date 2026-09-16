@@ -1,0 +1,12 @@
+[Unit]
+Description=Mostrar TODO al iniciar sesión
+After=graphical-session.target
+
+[Service]
+Type=simple
+ExecStartPre=/usr/bin/sleep 5
+ExecStart=/usr/bin/kitty -e todo
+Restart=no
+
+[Install]
+WantedBy=graphical-session.target

@@ -1,0 +1,18 @@
+#!/bin/bash
+# Screen recording wrapper with desktop audio support
+# Adds disown to prevent process termination when script exits
+
+export SCREENRECORD_DIR="${SCREENRECORD_DIR:-$HOME/Videos/ScreenCasts}"
+
+# Create directory if it doesn't exist
+mkdir -p "$SCREENRECORD_DIR"
+
+# Check if already recording
+if pgrep -x wl-screenrec > /dev/null; then
+    pkill wl-screenrec
+    echo "Recording stopped"
+else
+    wl-screenrec --low-power=off -f "$SCREENRECORD_DIR/salida.mp4" &
+    disown
+    echo "Recording started to $SCREENRECORD_DIR/salida.mp4"
+fi

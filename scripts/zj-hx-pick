@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+selected="$(zellij pipe -p filepicker)"
+[[ -n "${selected:-}" ]] || exit 0
+exec ~/.local/bin/zj-hx-open "$selected"

@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+parent="$(zellij pipe -p filepicker)"
+[[ -n "${parent:-}" ]] || exit 0
+
+read -r -p "Nombre del directorio: " name
+[[ -n "${name:-}" ]] || exit 0
+
+mkdir -p "$parent/$name"

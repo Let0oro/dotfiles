@@ -1,0 +1,12 @@
+[Unit]
+Description=Prueba de mecanografía al inicio de la sesión
+After=graphical-session.target
+
+[Service]
+Type=Simple
+ExecStartPre=/usr/bin/sleep 5
+ExecStart=/usr/bin/kitty -e bunx keysmasher
+Restart=no
+
+[Install]
+WantedBy=graphical-session.target

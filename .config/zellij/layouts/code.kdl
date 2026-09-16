@@ -1,0 +1,24 @@
+layout {
+  default_tab_template {
+    pane size=1 borderless=true {
+      plugin location="zellij:tab-bar"
+    }
+    children
+    pane size=2 borderless=true {
+      plugin location="zellij:status-bar"
+    }
+  }
+
+  tab name="Helix + Strider" focus=true {
+    // pane split_direction="Vertical" {
+    //   pane size="20%" name="STRIDER" {
+    //     plugin location="zellij:strider"
+    //   }
+    //   pane command="helix" cwd="." focus=true name="HELIX"
+    // }
+    pane focus=true name="HELIX" {
+        command "sh"
+        args "-c" "hx"
+    }
+  }
+}

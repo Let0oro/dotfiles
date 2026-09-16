@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+dir="$(zellij pipe -p filepicker)"
+[[ -n "${dir:-}" ]] || exit 0
+
+read -r -p "Nombre del archivo: " name
+[[ -n "${name:-}" ]] || exit 0
+
+touch "$dir/$name"

@@ -1,0 +1,85 @@
+# Logs
+*.log
+logs/
+
+# Caches
+.cache/
+*.cache
+__pycache__/
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# Build artifacts
+*.o
+*.so
+*.dylib
+
+# Package manager files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+bun.lock
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor backups
+*.bak
+*.backup
+*.orig
+
+# Binary files
+*.bin
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Node modules
+node_modules/
+
+# Python
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+.venv/
+env/
+
+# Rust
+target/
+
+# Go
+bin/
+
+# Kotlin/Java
+*.class
+*.jar
+
+# Docker
+docker-compose.override.yml
+
+# Systemd user service symlinks
+.config/systemd/user/*.wants/
+
+# Local overrides
+.local/

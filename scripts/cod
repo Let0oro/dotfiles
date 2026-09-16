@@ -1,0 +1,37 @@
+#!/bin/bash
+
+if [[ "$1" == "--pick" ]]; then
+    dir=$(find "$HOME" -maxdepth 3 -type d 2>/dev/null | fzf --prompt="Proyecto: " --height=40%)
+    [[ -z "$dir" ]] && exit 0
+    exec "$0" "$dir"
+fi
+
+dir="${1:-.}"
+dir="$(realpath -m "$dir")"
+[ -d "$dir" ] || exit 1
+
+layout="/tmp/zellij-cod-$$.kdl"
+
+cat > "$layout" << EOF
+layout {
+    pane split_direction="vertical" {
+        pane size="80%" {
+            pane split_direction="horizontal" {
+                pane size="30%" {
+                    plugin location="zellij:strider" {
+                        cwd "$dir"
+                    }
+                }
+                pane {
+                    command "helix"
+                    args "$dir"
+                }
+            }
+        }
+        pane size="20%" {
+        }
+    }
+}
+EOF
+
+uwsm-app -- kitty --detach -e zellij --layout "$layout"

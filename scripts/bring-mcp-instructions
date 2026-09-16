@@ -1,0 +1,22 @@
+#!/bin/bash
+
+SOURCE="/home/juanma/projects/current-projects/mcp-enterprise/docs/use/AGENTS.md"
+TARGET="AGENTS.md"
+
+if [ ! -f "$SOURCE" ]; then
+    echo "Error: Source file not found: $SOURCE"
+    exit 1
+fi
+
+if [ -L "$TARGET" ]; then
+    echo "Symlink already exists: $TARGET -> $(readlink -f "$TARGET")"
+    exit 0
+fi
+
+if [ -f "$TARGET" ]; then
+    echo "Error: AGENTS.md already exists in current directory. Remove it first."
+    exit 1
+fi
+
+ln -s "$SOURCE" "$TARGET"
+echo "Created symlink: $TARGET -> $SOURCE"
